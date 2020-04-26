@@ -405,7 +405,7 @@
                                 <option name="answerPlaceholders">
                                   <list />
                                 </option>
-                                <option name="highlightErrors" value="false" />
+                                <option name="highlightErrors" value="true" />
                                 <option name="name" value="hangman/hangman.py" />
                                 <option name="text" value="# Write your code here&#10;print('H A N G M A N')&#10;print('The game will be available soon.')&#10;" />
                                 <option name="trackChanges" value="true" />
