@@ -382,7 +382,7 @@
                       <option name="index" value="2" />
                       <option name="name" value="I want to play a game" />
                       <option name="record" value="-1" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="files">
                         <map>
                           <entry key="tests.py">
