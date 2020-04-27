@@ -1,4 +1,3 @@
-# Write your code here
 from random import choice
 words_list = ['python', 'java', 'kotlin', 'javascript']
 right_word = choice(words_list)
