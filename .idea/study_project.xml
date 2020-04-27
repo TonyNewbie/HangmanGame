@@ -310,7 +310,7 @@
           <option name="items">
             <list>
               <FrameworkLesson>
-                <option name="currentTaskIndex" value="1" />
+                <option name="currentTaskIndex" value="2" />
                 <option name="customPresentableName" />
                 <option name="id" value="0" />
                 <option name="index" value="1" />
@@ -381,7 +381,7 @@
                       <option name="id" value="6083" />
                       <option name="index" value="2" />
                       <option name="name" value="I want to play a game" />
-                      <option name="record" value="-1" />
+                      <option name="record" value="2" />
                       <option name="status" value="Solved" />
                       <option name="files">
                         <map>
@@ -431,7 +431,7 @@
                       <option name="index" value="3" />
                       <option name="name" value="Make your choice" />
                       <option name="record" value="-1" />
-                      <option name="status" value="Unchecked" />
+                      <option name="status" value="Solved" />
                       <option name="files">
                         <map>
                           <entry key="tests.py">
@@ -445,6 +445,20 @@
                                 <option name="text" value="from hstest.stage_test import *&#10;from hstest.test_case import TestCase&#10;from hstest.check_result import CheckResult&#10;&#10;from random import shuffle&#10;&#10;CheckResult.correct = lambda: CheckResult(True, '')&#10;CheckResult.wrong = lambda feedback: CheckResult(False, feedback)&#10;&#10;description_list = ['python', 'java', 'kotlin', 'javascript']&#10;out_of_description = ['clojure', 'haskell', 'typescript', 'assembler']&#10;&#10;catch = {i: 0 for i in description_list}&#10;&#10;&#10;class CoffeeMachineTest(StageTest):&#10;    def generate(self) -&gt; List[TestCase]:&#10;        tests = []&#10;&#10;        for word in description_list + out_of_description:&#10;            for i in range(100):&#10;                tests += [TestCase(stdin=word, attach=word)]&#10;&#10;        shuffle(tests)&#10;&#10;        word = 'last'&#10;        tests += [TestCase(stdin=word, attach=word)]&#10;        return tests&#10;&#10;    def check(self, reply: str, attach: Any) -&gt; CheckResult:&#10;&#10;        survived = 'You survived!'&#10;        hanged = 'You are hanged!'&#10;&#10;        is_survived = survived in reply&#10;        is_hanged = hanged in reply&#10;&#10;        if is_survived and is_hanged:&#10;            return CheckResult.wrong(&#10;                f'Looks like your output contains both \&quot;{survived}\&quot;'&#10;                f' and \&quot;{hanged}\&quot;. You should output only one of them.'&#10;            )&#10;&#10;        if not is_survived and not is_hanged:&#10;            return CheckResult.wrong(&#10;                f'Looks like your output doesn\'t contain neither \&quot;{survived}\&quot;'&#10;                f' nor \&quot;{hanged}\&quot;. You should output one of them.'&#10;            )&#10;&#10;        if attach in out_of_description:&#10;            if is_survived:&#10;                return CheckResult.wrong(&#10;                    f'Input contains a word out of the '&#10;                    f'list form the description but the '&#10;                    f'program output \&quot;{survived}\&quot;'&#10;                )&#10;            else:&#10;                return CheckResult.correct()&#10;&#10;        elif attach in description_list:&#10;            catch[attach] += is_survived&#10;            return CheckResult.correct()&#10;&#10;        else:&#10;            if any(v == 0 for v in catch.values()):&#10;                return CheckResult.wrong(&#10;                    &quot;Looks like your program is not using &quot;&#10;                    &quot;all of the words to guess from the list in description&quot;&#10;                )&#10;            else:&#10;                return CheckResult.correct()&#10;&#10;&#10;if __name__ == '__main__':&#10;    CoffeeMachineTest('hangman.hangman').run_tests()&#10;" />
                                 <option name="trackChanges" value="true" />
                                 <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="hangman/hangman.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="hangman/hangman.py" />
+                                <option name="text" value="# Write your code here&#10;print('H A N G M A N')&#10;word = input('Guess the word: ')&#10;if word == 'python':&#10;    print('You survived!')&#10;else:&#10;    print('You are hanged!')&#10;" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
                               </TaskFile>
                             </value>
                           </entry>
@@ -630,6 +644,1194 @@
                   </list>
                 </option>
               </FrameworkLesson>
+              <Lesson>
+                <option name="customPresentableName" />
+                <option name="id" value="0" />
+                <option name="index" value="2" />
+                <option name="name" value="Problems" />
+                <option name="updateDate" value="0" />
+                <option name="unitId" value="0" />
+                <option name="items">
+                  <list>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Alphabet&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7468&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Suppose we have a string with some alphabet and we want to store all the letters from it in a tuple. Read the&amp;nbsp;input string and print this&amp;nbsp;tuple.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;abcdefghijklmnopqrstuvwxyz&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7462&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7468" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7468" />
+                      <option name="index" value="1" />
+                      <option name="name" value="Alphabet" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;abcdefghijklmnopqrstuvwxyz&quot;,&quot;(\u0027a\u0027, \u0027b\u0027, \u0027c\u0027, \u0027d\u0027, \u0027e\u0027, \u0027f\u0027, \u0027g\u0027, \u0027h\u0027, \u0027i\u0027, \u0027j\u0027, \u0027k\u0027, \u0027l\u0027, \u0027m\u0027, \u0027n\u0027, \u0027o\u0027, \u0027p\u0027, \u0027q\u0027, \u0027r\u0027, \u0027s\u0027, \u0027t\u0027, \u0027u\u0027, \u0027v\u0027, \u0027w\u0027, \u0027x\u0027, \u0027y\u0027, \u0027z\u0027)&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# work with this string&#10;alphabet = input()" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Oceans&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7469&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Turn a&amp;nbsp;list &lt;code class=&quot;java&quot;&gt;oceans&lt;/code&gt; into a tuple to prevent further&amp;nbsp;data change.&lt;/p&gt; &#10;  &lt;p&gt;You are &lt;em&gt;NOT&lt;/em&gt; supposed to create a new variable for the tuple or print anything.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7462&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7469" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7469" />
+                      <option name="index" value="2" />
+                      <option name="name" value="Oceans" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="oceans = ['Atlantic', 'Pacific', 'Indian', 'Southern', 'Arctic']" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;A single-element tuple&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7470&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Alice tried to define a &lt;code class=&quot;java&quot;&gt;singleton&lt;/code&gt; tuple with the first and only item&amp;nbsp;&lt;code class=&quot;java&quot;&gt;[0, 1, 1, 2, 3, 5, 8, 13, 21]&lt;/code&gt;. Alas, one small detail is missing here. Fix the code Alice wrote.&lt;/p&gt; &#10;  &lt;p&gt;You are &lt;em&gt;NOT&lt;/em&gt; supposed to create a new variable for the tuple or print anything.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7462&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7470" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7470" />
+                      <option name="index" value="3" />
+                      <option name="name" value="A single-element tuple" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# fix the code below&#10;singleton = ([0, 1, 1, 2, 3, 5, 8, 13, 21])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;The last number&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7471&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Given a tuple consisting of numbers, print its last element.&lt;/p&gt; &#10;  &lt;p&gt;&lt;button class=&quot;btn-sm btn-outline-secondary&quot; onclick=&quot;getElementById('hint-72').style.display='inline'&quot;&gt; Hint &lt;/button&gt; &lt;/p&gt;&#10;  &lt;div id=&quot;hint-72&quot; style=&quot;display:none;&quot;&gt;&#10;   When the length of the tuple is unknown, you can use negative indexes or the &#10;   &lt;code class=&quot;java&quot;&gt;len()&lt;/code&gt; function.&#10;  &lt;/div&gt;&#10;  &lt;p&gt;&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;24 22 42&lt;br&gt;&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;42&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7462&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7471" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7471" />
+                      <option name="index" value="4" />
+                      <option name="name" value="The last number" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;24 22 42\n&quot;,&quot;42&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# use this tuple&#10;numbers = tuple(int(n) for n in input().split())" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Name&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/8088&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;From the input, you get the first and the last name of a person. Create a tuple with the full name: the first element should be the first name and the second element should be the last name. Save the resulting tuple to the variable &lt;code class=&quot;java&quot;&gt;full_name&lt;/code&gt;. Do NOT print anything!&lt;/p&gt; &#10;  &lt;p&gt;The variables &lt;code class=&quot;java&quot;&gt;first_name&lt;/code&gt; and &lt;code class=&quot;java&quot;&gt;last_name&lt;/code&gt;&amp;nbsp;have already been read from input.&lt;/p&gt; &#10;  &lt;p&gt;&lt;strong&gt;Example.&amp;nbsp;&lt;/strong&gt;Suppose, &lt;code class=&quot;java&quot;&gt;first_name&lt;/code&gt; is &lt;code class=&quot;java&quot;&gt;&quot;John&quot;&lt;/code&gt; and &lt;code class=&quot;java&quot;&gt;last_name&lt;/code&gt; is &lt;code class=&quot;java&quot;&gt;&quot;Doe&quot;&lt;/code&gt;. The resulting tuple should be &lt;code class=&quot;java&quot;&gt;(&quot;John&quot;, &quot;Doe&quot;)&lt;/code&gt;&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7462&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/8088" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="8088" />
+                      <option name="index" value="5" />
+                      <option name="name" value="Name" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="first_name = input()&#10;last_name = input()&#10;&#10;# create full_name here" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Call me by my name&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/8556&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;There is a function called &lt;code class=&quot;java&quot;&gt;add_book()&lt;/code&gt; that takes a non-empty string containing the title of a book to add&amp;nbsp;it to recommendations. Share your favorite book with us by calling this function. Importantly, specify the keyword argument &lt;code class=&quot;java&quot;&gt;title&lt;/code&gt; in the call. Otherwise, you may get an error.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7248&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/8556" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="8556" />
+                      <option name="index" value="6" />
+                      <option name="name" value="Call me by my name" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Favorable default&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7254&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Write a short function &lt;code class=&quot;java&quot;&gt;code&lt;/code&gt; that will print out this message:&lt;/p&gt; &#10;  &lt;p&gt;&lt;code class=&quot;java&quot;&gt;We code in {language}&lt;/code&gt;&lt;/p&gt; &#10;  &lt;p&gt;Set &lt;strong&gt;&quot;Python&quot;&lt;/strong&gt; as a default value to the &lt;code class=&quot;java&quot;&gt;language&lt;/code&gt; parameter.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7248&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7254" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7254" />
+                      <option name="index" value="7" />
+                      <option name="name" value="Favorable default" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Misfortune&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/8557&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Robin has declared a function that prints the squares of odd numbers in the specified range. Unfortunately, several function calls gave an unexpected result. The function itself seems to be fine. Help Robin&amp;nbsp;figure out what went&amp;nbsp;wrong in these calls and fix them.&lt;/p&gt; &#10;  &lt;p&gt;For each case, the required range is written in a&amp;nbsp;comment.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7248&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/8557" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="8557" />
+                      <option name="index" value="8" />
+                      <option name="name" value="Misfortune" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="def square_odds(a, b):&#10;    start = a&#10;    if a % 2 == 0:&#10;        start += 1&#10;    end = b + 1&#10;    for odd in range(start, end, 2):&#10;        print(odd ** 2)&#10;&#10;&#10;# from 22 to 42&#10;square_odds(a=22, 42)&#10;&#10;# from 15 to 31&#10;square_odds(b=15, a=31)&#10;&#10;# from 42 to 49&#10;square_odds(49, a=42)" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;URL&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/8558&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Declare a function called &lt;code class=&quot;java&quot;&gt;create_url()&lt;/code&gt;. It should take two arguments &lt;code class=&quot;java&quot;&gt;host&lt;/code&gt; and &lt;code class=&quot;java&quot;&gt;port&lt;/code&gt; and return URL in the format &lt;code class=&quot;java&quot;&gt;&quot;https://{host}:{port}&quot;&lt;/code&gt;.&lt;/p&gt; &#10;  &lt;p&gt;Set default values for both parameters: a string &lt;strong&gt;&quot;localhost&quot;&lt;/strong&gt; and an integer&amp;nbsp;&lt;strong&gt;443 &lt;/strong&gt;respectively. Called without arguments, the function would&amp;nbsp;return &lt;code class=&quot;java&quot;&gt;&quot;https://localhost:443&quot;&lt;/code&gt;.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7248&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/8558" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="8558" />
+                      <option name="index" value="9" />
+                      <option name="name" value="URL" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="def create_url():&#10;    pass" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Warm welcome&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/8559&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Morgan founded a company that sends satellites into the orbit to observe Earth from space. To headhunt the best aerospace engineers, Morgan decided to pay a welcome bonus equal to 35% of the base salary. However, the bonus may be even higher for a particular candidate.&lt;/p&gt; &#10;  &lt;p&gt;Declare a function &lt;code class=&quot;java&quot;&gt;get_bonus()&lt;/code&gt; below that would calculate this bonus. It should take two arguments, &lt;code class=&quot;java&quot;&gt;salary&lt;/code&gt; and &lt;code class=&quot;java&quot;&gt;percentage&lt;/code&gt;, with a default value &lt;strong&gt;35&lt;/strong&gt; for the last one. Return only the integer part of the bonus.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/7248&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/8559" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="8559" />
+                      <option name="index" value="10" />
+                      <option name="name" value="Warm welcome" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="def get_bonus(salary, percentage):&#10;    pass" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;List from input&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/6739&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Write a program that takes &lt;em&gt;n&lt;/em&gt; numbers as&amp;nbsp;input, creates a list from them&amp;nbsp;and then prints it.&lt;/p&gt; &#10;  &lt;p&gt;The first input line is&amp;nbsp;&lt;em&gt;n&amp;nbsp;&lt;/em&gt;– length of the resulting list. It is followed by&amp;nbsp;&lt;em&gt;n&lt;/em&gt;&amp;nbsp;lines containing list elements.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;5&lt;br&gt;100&lt;br&gt;-1&lt;br&gt;72&lt;br&gt;0&lt;br&gt;0&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;[100, -1, 72, 0, 0]&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6031&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/6739" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="6739" />
+                      <option name="index" value="11" />
+                      <option name="name" value="List from input" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;5\n100\n-1\n72\n0\n0&quot;,&quot;[100, -1, 72, 0, 0]&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="n = int(input())&#10;for i in range(n):&#10;    pass" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Shopping list&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7928&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Ruth goes shopping today, so she is busy making a shopping list.&lt;/p&gt; &#10;  &lt;p&gt;She wrote down things that she would like to buy at the grocery store: first &lt;code class=&quot;java&quot;&gt;&quot;milk&quot;&lt;/code&gt;, then &lt;code class=&quot;java&quot;&gt;&quot;olive oil&quot;&lt;/code&gt; and &lt;code class=&quot;java&quot;&gt;&quot;bananas&quot;&lt;/code&gt;. When sneaking a look at&amp;nbsp;the fridge, she noticed that there was some &lt;strong&gt;&lt;em&gt;milk &lt;/em&gt;&lt;/strong&gt;left&amp;nbsp;and changed her mind about buying a new one. It got crossed out of the list. And, like&amp;nbsp;a cherry on top, a &lt;code class=&quot;java&quot;&gt;&quot;brownie&quot;&lt;/code&gt;&amp;nbsp;became the last item Ruth had put on the list.&lt;/p&gt; &#10;  &lt;p&gt;Now you try to replicate these operations on the variable &lt;code class=&quot;java&quot;&gt;shopping_list&lt;/code&gt;.&lt;/p&gt; &#10;  &lt;p&gt;You are &lt;em&gt;NOT &lt;/em&gt;supposed to print the results.&lt;/p&gt; &#10;  &lt;p&gt;&lt;button class=&quot;btn-sm btn-outline-secondary&quot; onclick=&quot;getElementById('hint-725').style.display='inline'&quot;&gt; Hint &lt;/button&gt; &lt;/p&gt;&#10;  &lt;div id=&quot;hint-725&quot; style=&quot;display:none;&quot;&gt;&#10;   You can add an item with &#10;   &lt;code class=&quot;java&quot;&gt;list.append()&lt;/code&gt; and delete it with &#10;   &lt;code class=&quot;java&quot;&gt;list.remove()&lt;/code&gt;.&#10;  &lt;/div&gt;&#10;  &lt;p&gt;&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6031&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7928" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7928" />
+                      <option name="index" value="12" />
+                      <option name="name" value="Shopping list" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# work with this variable&#10;shopping_list = []&#10;&#10;shopping_list.append(&quot;milk&quot;)&#10;# put the rest of list operations below" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Sort the numbers&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/8089&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Below you can see a list of strings called&amp;nbsp;&lt;code class=&quot;java&quot;&gt;numbers&lt;/code&gt;. Sort it in the &lt;strong&gt;descending&lt;/strong&gt; order as strings (alphabetically) and print the resulting list.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6031&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/8089" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="8089" />
+                      <option name="index" value="13" />
+                      <option name="name" value="Sort the numbers" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="numbers = [&quot;77&quot;, &quot;145&quot;, &quot;987&quot;, &quot;2095&quot;, &quot;6&quot;, &quot;371&quot;, &quot;4999&quot;, &quot;81&quot;]&#10;&#10;# sort numbers" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Calculating the factorial&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/6022&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Import&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://docs.python.org/3.8/library/math.html#math.factorial&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;factorial&lt;/a&gt; function from &lt;samp&gt;math&lt;/samp&gt; module and print the value of the factorial of &lt;samp&gt;x&lt;/samp&gt;.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;5&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;120&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6019&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/6022" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="6022" />
+                      <option name="index" value="14" />
+                      <option name="name" value="Calculating the factorial" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;5&quot;,&quot;120&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# place `import` statement at top of the program&#10;&#10;&#10;# don't modify this code or variable `x` may not be available&#10;x = int(input())&#10;&#10;# use factorial() here" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Working with strings&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/6024&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Print the values of &lt;code class=&quot;java&quot;&gt;digits&lt;/code&gt; and &lt;code class=&quot;java&quot;&gt;ascii_lowercase&lt;/code&gt; from &lt;samp&gt;string&lt;/samp&gt; module on separate lines.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6019&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/6024" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="6024" />
+                      <option name="index" value="15" />
+                      <option name="name" value="Working with strings" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# put your code here" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" value="E ** x minus one" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;E ** x minus one&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7176&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Write a program that takes an integer number&amp;nbsp;&lt;em&gt;&lt;strong&gt;x&lt;/strong&gt;&lt;/em&gt;&amp;nbsp;and prints&amp;nbsp;&lt;em&gt;&lt;strong&gt;e&lt;/strong&gt;&lt;/em&gt;&amp;nbsp;(a mathematical constant) raised to power&amp;nbsp;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;/strong&gt;,&amp;nbsp;minus one. Use the function&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://docs.python.org/3.8/library/math.html#math.expm1&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;expm1&lt;/a&gt;&amp;nbsp;defined in the &lt;strong&gt;&lt;em&gt;math&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;module.&lt;/p&gt; &#10;  &lt;p&gt;The variable &lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;/strong&gt; is already defined.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;-57&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;-1.0&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6019&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7176" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7176" />
+                      <option name="index" value="16" />
+                      <option name="name" value="E    x minus one" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;-57&quot;,&quot;-1.0&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# place `import` statement at top of the program&#10;&#10;&#10;# don't modify this code, otherwise, `x` may not be available&#10;x = int(input())&#10;&#10;# use expm1() here" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Capitalize all words&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7177&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Write a program that takes a string, capitalizes all words in it and then prints the result. Use&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://docs.python.org/3.8/library/string.html#string.capwords&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;capwords&lt;/a&gt; function from the&amp;nbsp;&lt;strong&gt;&lt;em&gt;string&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;module.&lt;/p&gt; &#10;  &lt;p&gt;The string is already defined.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;a aaaa aaaaaaaa&lt;br&gt;&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;A Aaaa Aaaaaaaa&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6019&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7177" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7177" />
+                      <option name="index" value="17" />
+                      <option name="name" value="Capitalize all words" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;a aaaa aaaaaaaa\n&quot;,&quot;A Aaaa Aaaaaaaa&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# place `import` statement at top of the program&#10;&#10;&#10;# don't modify this code or the variable may not be available&#10;input_string = input()&#10;&#10;# use capwords() here" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Not exactly random&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7178&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Numbers, generated by functions provided in&amp;nbsp;&lt;strong&gt;&lt;em&gt;random&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;module, are not exactly random – they use random number generator based on some number (by default, on the current system time). You can also set this number with the&amp;nbsp;&lt;strong&gt;&lt;em&gt;seed&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;function – and all numerical sequences generated after that will be the same.&lt;/p&gt; &#10;  &lt;p&gt;Write a program that takes an integer number&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;, sets a random number generator to that&amp;nbsp;number and then prints a pseudo-random number from -100 to 100.&lt;/p&gt; &#10;  &lt;p&gt;Use&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://docs.python.org/3.8/library/random.html#random.seed&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;seed&lt;/a&gt;&lt;strong&gt;&lt;em&gt; &lt;/em&gt;&lt;/strong&gt;and&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://docs.python.org/3.8/library/random.html#random.randint&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;randint&lt;/a&gt;&lt;strong&gt;&lt;em&gt; &lt;/em&gt;&lt;/strong&gt;functions. The former takes one argument and the latter takes two numbers that represent the range.&lt;/p&gt; &#10;  &lt;p&gt;The variable&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;is already defined.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;36&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;-16&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6019&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7178" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7178" />
+                      <option name="index" value="18" />
+                      <option name="name" value="Not exactly random" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;36&quot;,&quot;-16&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# place `import` statement at top of the program&#10;&#10;&#10;# don't modify this code or variable `n` may not be available&#10;n = int(input())&#10;&#10;# put your code here" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Copysign function&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7179&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Write a program that takes two float numbers,&amp;nbsp;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;and&amp;nbsp;&lt;strong&gt;&lt;em&gt;y&lt;/em&gt;&lt;/strong&gt;, and prints&amp;nbsp;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;with the sign of&amp;nbsp;&lt;strong&gt;&lt;em&gt;y&lt;/em&gt;&lt;/strong&gt;. Use&amp;nbsp;&lt;a target=&quot;_blank&quot; href=&quot;https://docs.python.org/3/library/math.html#math.copysign&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;copysign&lt;/a&gt;&lt;strong&gt;&lt;em&gt; &lt;/em&gt;&lt;/strong&gt;function defined in the&amp;nbsp;&lt;strong&gt;&lt;em&gt;math&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;module.&lt;/p&gt; &#10;  &lt;p&gt;Variables&amp;nbsp;&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;and&amp;nbsp;&lt;strong&gt;&lt;em&gt;y&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;are already defined.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;-68.83573394536573 -66.80342071491599&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;-68.83573394536573&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6019&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7179" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7179" />
+                      <option name="index" value="19" />
+                      <option name="name" value="Copysign function" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;-68.83573394536573 -66.80342071491599&quot;,&quot;-68.83573394536573&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# place `import` statement at top of the program&#10;&#10;&#10;# don't modify this code or the variables may not be available&#10;x, y = map(float, input().split(' '))" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;The dice game&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/6267&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;It's impossible not to know the&amp;nbsp;dice game. Please,&amp;nbsp;write a&amp;nbsp;program that will imitate a roll of one die&amp;nbsp;with the help of an appropriate random function.&lt;/p&gt; &#10;  &lt;p&gt;Thus, your task is just to generate one integer in the range from&amp;nbsp;&lt;em&gt;1&lt;/em&gt; to&amp;nbsp;&lt;em&gt;6&lt;/em&gt; and print it.&lt;/p&gt; &#10;  &lt;p&gt;The module &lt;samp&gt;random&lt;/samp&gt; has&amp;nbsp;been imported for you.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6263&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/6267" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="6267" />
+                      <option name="index" value="20" />
+                      <option name="name" value="The dice game" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="# The `random` module has been imported.&#10;# Use a function from it in the next line&#10;print(...)" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;From 0 to 1&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7029&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;The function used to set a starting point of the random search algorithm is called&amp;nbsp;&lt;strong&gt;&lt;em&gt;random.seed()&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;and takes a single integer number. Write a program that takes an integer number&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;, sets a seed to&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;and then prints a pseudo-random number from 0 to 1.&lt;/p&gt; &#10;  &lt;p&gt;The variable&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;is already defined.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;-65&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;0.414743999308679&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6263&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7029" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7029" />
+                      <option name="index" value="21" />
+                      <option name="name" value="From 0 to 1" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;-65&quot;,&quot;0.414743999308679&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="import random&#10;&#10;&#10;# work with this variable&#10;n = int(input())" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Yoda style&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/6268&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Everybody wants to speak like master Yoda sometimes. Let's try to implement&amp;nbsp;a program that will help us with it.&amp;nbsp;&lt;/p&gt; &#10;  &lt;p&gt;First, we&amp;nbsp;turn the string of words into a list using&amp;nbsp;the &lt;code class=&quot;java&quot;&gt;string.split()&lt;/code&gt; method.&lt;/p&gt; &#10;  &lt;p&gt;Then use the function &lt;code class=&quot;java&quot;&gt;random.seed(43)&lt;/code&gt; and rearrange the obtained sequence.&lt;/p&gt; &#10;  &lt;p&gt;To turn the list back into a string, use&amp;nbsp;&lt;code class=&quot;java&quot;&gt;' '.join(list)&lt;/code&gt;.&amp;nbsp;&lt;/p&gt; &#10;  &lt;p&gt;Print the message in the end.&lt;/p&gt; &#10;  &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: you have to use &lt;code class=&quot;java&quot;&gt;random.seed(43)&lt;/code&gt; in this task!&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;Luke, I'm your father&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;your father I'm Luke,&lt;br&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;I will be back&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;be back will I&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6263&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/6268" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="6268" />
+                      <option name="index" value="22" />
+                      <option name="name" value="Yoda style" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;Luke, I\u0027m your father&quot;,&quot;your father I\u0027m Luke,&quot;],[&quot;I will be back&quot;,&quot;be back will I&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="import random&#10;&#10;# your sentence is assigned to the variable&#10;sentence = input().split()&#10;&#10;# write your python code below&#10;&#10;&#10;# shows the message&#10;print(' '.join(sentence))" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Voldemort&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7003&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;The function used to set a starting point of the random search algorithm is called&amp;nbsp;&lt;strong&gt;&lt;em&gt;random.seed()&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;and takes a single integer number. Write a program that takes a single number&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;, sets a seed to&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;and then prints a pseudo-randomly chosen letter from the string&amp;nbsp;&lt;strong&gt;&lt;em&gt;&quot;Voldemort&quot;&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt; &#10;  &lt;p&gt;The variable&amp;nbsp;&lt;strong&gt;&lt;em&gt;n&lt;/em&gt;&lt;/strong&gt;&amp;nbsp;is already defined.&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;b&gt;Sample Input:&lt;/b&gt;&lt;br&gt;68&lt;br&gt;&lt;b&gt;Sample Output:&lt;/b&gt;&lt;br&gt;r&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6263&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7003" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7003" />
+                      <option name="index" value="23" />
+                      <option name="name" value="Voldemort" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[[&quot;68&quot;,&quot;r&quot;]])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="import random&#10;&#10;&#10;# work with this variable&#10;n = int(input())" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                    <CodeTask>
+                      <option name="customPresentableName" />
+                      <option name="descriptionFormat" value="HTML" />
+                      <option name="descriptionText" value="&lt;b&gt;Beta distribution&lt;/b&gt; &lt;a class=&quot;right&quot; href=&quot;https://hyperskill.org/learn/step/7842&quot;&gt;Open on Hyperskill&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;html&gt;&#10; &lt;head&gt;&lt;/head&gt;&#10; &lt;body&gt;&#10;  &lt;p&gt;Python is widely used for mathematical purposes. Let's start&amp;nbsp;gaining experience by using the &lt;code class=&quot;java&quot;&gt;betavariate(alpha, beta)&lt;/code&gt; function from the &lt;samp&gt;random&lt;/samp&gt; module.&lt;/p&gt; &#10;  &lt;p&gt;Generate a&amp;nbsp;number&amp;nbsp;from the&amp;nbsp;&lt;strong&gt;beta&amp;nbsp;distribution&lt;/strong&gt; with parameters&amp;nbsp;&lt;code class=&quot;java&quot;&gt;alpha=0.9&lt;/code&gt; and &lt;code class=&quot;java&quot;&gt;beta=0.1&lt;/code&gt;. Print your result.&lt;/p&gt; &#10;  &lt;p&gt;&lt;button class=&quot;btn-sm btn-outline-secondary&quot; onclick=&quot;getElementById('hint-398').style.display='inline'&quot;&gt; Hint &lt;/button&gt; &lt;/p&gt;&#10;  &lt;div id=&quot;hint-398&quot; style=&quot;display:none;&quot;&gt;&#10;   You can check&amp;nbsp;&#10;   &lt;a target=&quot;_blank&quot; href=&quot;https://docs.python.org/3/library/random.html#random.betavariate&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;the random module's documentation&lt;/a&gt; to find out more about the function in question.&#10;  &lt;/div&gt;&#10;  &lt;p&gt;&lt;/p&gt;&#10; &lt;/body&gt;&#10;&lt;/html&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Memory limit: 256 Mb&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;gray&quot;&gt;Time limit: 5s&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;br/&gt;&lt;a href=&quot;https://hyperskill.org/learn/step/6263&quot;&gt;Show topic summary&lt;/a&gt;" />
+                      <option name="feedbackLink">
+                        <FeedbackLink>
+                          <option name="link" value="https://hyperskill.org/learn/step/7842" />
+                          <option name="type" value="CUSTOM" />
+                        </FeedbackLink>
+                      </option>
+                      <option name="id" value="7842" />
+                      <option name="index" value="24" />
+                      <option name="name" value="Beta distribution" />
+                      <option name="record" value="-1" />
+                      <option name="status" value="Solved" />
+                      <option name="files">
+                        <map>
+                          <entry key="tests.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="false" />
+                                <option name="name" value="tests.py" />
+                                <option name="text" value="from test_helper import check_samples&#10;&#10;if __name__ == '__main__':&#10;    check_samples(samples=[])" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="false" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                          <entry key="task.py">
+                            <value>
+                              <TaskFile>
+                                <option name="answerPlaceholders">
+                                  <list />
+                                </option>
+                                <option name="highlightErrors" value="true" />
+                                <option name="name" value="task.py" />
+                                <option name="text" value="import random&#10;&#10;&#10;random.seed(3)&#10;# call the function here" />
+                                <option name="trackChanges" value="true" />
+                                <option name="visible" value="true" />
+                              </TaskFile>
+                            </value>
+                          </entry>
+                        </map>
+                      </option>
+                      <option name="updateDate" />
+                    </CodeTask>
+                  </list>
+                </option>
+              </Lesson>
             </list>
           </option>
         </HyperskillCourse>
